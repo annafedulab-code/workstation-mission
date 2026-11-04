@@ -19,7 +19,7 @@
 - [x] 포트 매핑 접속 (8080, 8081)
 - [x] 바인드 마운트 반영
 - [x] 볼륨 영속성
-- [ ] Git 설정 + VSCode GitHub 연동
+- [x] Git 설정 + VSCode GitHub 연동
 
 ## 4. 터미널 조작 로그
 
@@ -505,7 +505,13 @@ init.defaultbranch=main
 - 이메일은 개인정보 보호를 위해 마스킹했다.
 
 ### 10-2. VSCode GitHub 로그인 및 저장소 연동
-(작성 예정)
+- VSCode 계정 메뉴에서 GitHub 계정(`annafedulab-code`) 로그인 상태를 확인했다.
+
+![VSCode GitHub 로그인 확인](images/vscode-github-login.png)
+
+- WSL Ubuntu의 `~/codyssey/workstation-mission` 폴더를 VSCode로 열고(`code .`, 하단 표시 `WSL: Ubuntu`), 소스 제어 패널의 **Publish to GitHub**로 원격 저장소를 생성해 첫 커밋을 올렸다.
+- 원격 저장소: https://github.com/annafedulab-code/workstation-mission
+- 참고: VSCode가 "제한 모드"이면 소스 제어(Git) 기능이 비활성화되어 Publish 버튼이 보이지 않으므로, 폴더를 신뢰(Trust)한 뒤 진행했다.
 
 ### 10-3. Git과 GitHub의 차이
 - Git: 내 컴퓨터(로컬)에서 파일 변경 이력을 기록·관리하는 버전 관리 도구
