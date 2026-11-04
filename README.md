@@ -516,6 +516,33 @@ init.defaultbranch=main
 ### 10-3. Git과 GitHub의 차이
 - Git: 내 컴퓨터(로컬)에서 파일 변경 이력을 기록·관리하는 버전 관리 도구
 - GitHub: Git 저장소를 인터넷(원격)에 올려 공유·백업·협업할 수 있게 해 주는 플랫폼
+
+### 10-4. 원격 저장소 연결 및 push 증거
+- 원격 저장소 연결 확인 및 최근 커밋 로그
+```bash
+anna@Anna:~/codyssey/workstation-mission$ git remote -v
+origin  https://github.com/annafedulab-code/workstation-mission.git (fetch)
+origin  https://github.com/annafedulab-code/workstation-mission.git (push)
+anna@Anna:~/codyssey/workstation-mission$ git log --oneline -5
+dfd0e65 (HEAD -> main, origin/main) docs: VSCode 로그인 캡처 이미지 추가
+4f90274 docs: VSCode GitHub 연동 내용 추가
+d5be303 first commit
+```
+
+![git remote -v 및 git log 출력](images/git-remote-log.png)
+
+- `origin`이 GitHub 저장소 주소로 fetch/push 모두 연결되어 있다.
+- 최신 커밋에 `HEAD -> main`과 `origin/main`이 함께 표시되어, 로컬 main의 최신 커밋이 원격(origin/main)까지 push된 상태임을 확인했다.
+- GitHub에 push된 커밋 히스토리: https://github.com/annafedulab-code/workstation-mission/commits/main
+
+| 커밋 | 메시지 | 일시(KST) | push 방법 |
+|---|---|---|---|
+| [`d5be303`](https://github.com/annafedulab-code/workstation-mission/commit/d5be30327e7df0dafb35d1d92f1b39915fbd7b7b) | first commit | 2026-11-02 13:39 | VSCode "Publish to GitHub" |
+| [`4f90274`](https://github.com/annafedulab-code/workstation-mission/commit/4f902746f20a5744e0ea786a83ca474762b0fb9a) | docs: VSCode GitHub 연동 내용 추가 | 2026-11-04 12:56 | VSCode 소스 제어 "동기화" |
+| [`dfd0e65`](https://github.com/annafedulab-code/workstation-mission/commit/dfd0e65c84fb727803ff62aed041cde568a2ddef) | docs: VSCode 로그인 캡처 이미지 추가 | 2026-11-04 13:35 | VSCode 소스 제어 "동기화" |
+
+- 로컬에서 만든 커밋이 위 GitHub 커밋 링크에 그대로 나타나므로, 원격 저장소로 push가 성공했음을 확인할 수 있다.
+
 ## 11. 트러블슈팅
 
 ### 트러블슈팅 1: `mv: cannot stat 'renamed.txt': No such file or directory`
